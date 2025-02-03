@@ -19,7 +19,7 @@ function App() {
 	const [followers, setFollowers] = React.useState<number>(0);
 	const [repos, setRepos] = React.useState<number>(0);
 	useEffect(() => {
-		fetch("https://api.github.com/users/its-Lyn")
+		fetch("https://api.github.com/users/EveMeows")
 			.then(res => res.json())
 			.then(data => {
 				setAvatarUrl(data.avatar_url);
@@ -76,9 +76,6 @@ function App() {
 			projects[i].delay = base;
 			base += 100;
 	}
-	
-	// Now you can use the projects array with updated delay values
-	console.log(projects);
 
 	return (
     <>
@@ -108,7 +105,7 @@ function App() {
 					<p className="font-bold text-5xl primary pb-10" id="title" data-aos="fade-up" data-aos-easing="ease-in-out">About Me</p>
 
 					<section className="text-lg px-4" data-aos="fade-up" data-aos-delay="100">
-						<p>I'm a very <span className="primary">opinionated</span> 18 year old when it comes to the software I use.</p>
+						<p>I'm a very <span className="primary">opinionated</span> 19 year old when it comes to the software I use.</p>
 						<p>I am also a <span className="primary">Trans Girl</span>, so, that means, anti-LGBTQ people <span className="red">DNI</span>!</p>
 						<p>
 							I am mainly a <span className="primary">Linux</span> user, more specifically
@@ -154,14 +151,17 @@ function App() {
 							))
 						}
 					</div>
-					<p className="my-2" data-aos="fade-up" data-aos-delay="500">Every project here can be found on my GitHub!</p>
-					<div className="gh-card p-4 rounded-2xl flex flex-row mb-20" data-aos="fade-up" data-aos-delay="600">
+					<p className="my-2" data-aos="fade-up" data-aos-delay="500">Every project here can be found on my GitHub and CodeBerg!</p>
+					<div className="gh-card p-4 rounded-2xl flex flex-row mb-5" data-aos="fade-up" data-aos-delay="600">
 						<img src={avatarUrl} className="h-20 rounded-3xl" />
 						<div className="text-left">
 							<a className="cursor-pointer font-bold primary ml-2" target="_blank" rel="noopener noreferrer" href={url}><u>{login}</u> <span className="faded font-normal">({name})</span></a>
 							<p className="ml-2">{followers} Followers</p>
 							<p className="ml-2">{repos} Repos</p>
 						</div>
+					</div>
+					<div className="gh-card p-4 rounded-2xl flex flex-row mb-20" data-aos="fade-up" data-aos-delay="700">
+						<a className="primary cursor-pointer font-normal faded" href="https://codeberg.org/itsEve">CodeBerg</a>
 					</div>
 			</article>
     </>
